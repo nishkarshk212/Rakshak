@@ -1,7 +1,14 @@
 import logging
 import os
 import cv2
-import pytesseract
+try:
+    import pytesseract  # optional; OCR will be disabled if unavailable
+except Exception:
+    class _PT:
+        @staticmethod
+        def image_to_string(*args, **kwargs):
+            return ""
+    pytesseract = _PT()
 import re
 import unicodedata
 from telegram import Update, ChatPermissions
