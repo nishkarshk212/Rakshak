@@ -1,7 +1,15 @@
 import logging
 import os
-import cv2
 import sys
+
+# Debug import failure
+try:
+    import cv2
+except ImportError as e:
+    print("OpenCV import failed. Installed packages:", file=sys.stderr)
+    os.system("pip list")
+    raise e
+
 from collections import namedtuple
 try:
     import uvloop
