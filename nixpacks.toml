@@ -1,8 +1,11 @@
 [phases.setup]
-nixPkgs = ["tesseract", "python311", "ffmpeg"]
+nixPkgs = ["tesseract", "python311", "ffmpeg", "glib", "libGL"]
 
 [phases.install]
-cmds = ["pip install -r requirements.txt"]
+cmds = [
+    "pip install -r requirements.txt",
+    "pip install opencv-python-headless"
+]
 
 [start]
 cmd = "python bot.py"
