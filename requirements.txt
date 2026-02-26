@@ -1,5 +1,5 @@
 python-telegram-bot==20.7
-opencv-python-headless==4.9.0.80
+opencv-python-headless
 nudenet==3.0.9
 pillow==10.2.0
 pytesseract==0.3.10
